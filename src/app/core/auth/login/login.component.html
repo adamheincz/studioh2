@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Sign in</h2>
+    <form [formGroup]="loginForm" (submit)="onLogin()">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" formControlName="username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" formControlName="password">
+        </div>
+        <span class="error-message" *ngIf="!loginForm.dirty">{{ errorMessage }}</span>
+        <button type="submit">Sign in</button>
+    </form>
+</div>

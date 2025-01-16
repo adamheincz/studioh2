@@ -1,0 +1,14 @@
+<!-- <app-side-progress-navbar [albums]="albums" #sideProgressBar></app-side-progress-navbar>
+<div class="categories" *ngIf="dataIsLoaded"> -->
+<!-- <app-album-carousel *ngFor="let album of albums, index as i" #carousel [album]="albums[i]"></app-album-carousel> -->
+<!-- <app-album-carousel *ngFor="let album of albums, index as i" #carousel [album]="albums[i]"></app-album-carousel>
+</div> -->
+<!-- <ng-container *ngIf="dataIsLoaded"> -->
+    <app-hero id="hero"></app-hero>
+    <app-preface id="about-us" #aboutUs></app-preface>
+    <ng-container *ngIf="dataIsLoaded">
+        <app-gallery id="gallery" [albums]="albums"></app-gallery>
+    </ng-container>
+    <app-pricing id="pricing"></app-pricing>
+    <app-contact id="contact"></app-contact>
+<!-- </ng-container> -->

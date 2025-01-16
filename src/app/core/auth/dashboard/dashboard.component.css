@@ -1,0 +1,97 @@
+:host{
+    position: relative;
+    top: var(--header-height);
+    width: 100vw;
+    height: fit-content;
+}
+
+.container{
+    margin: auto;
+    width: 50vw;
+    padding-bottom: var(--footer-height);
+}
+
+.container h1 {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.control-panel {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.control-panel button {
+    background-color: white;
+    color: var(--background-color);
+    font-weight: 700;
+    padding: 1em;
+}
+
+.control-panel>button {
+    margin-right: 0.5rem;
+}
+
+.album {
+    display: flex;
+    border-top: 1px solid white;
+    justify-content: space-between;
+    padding: 1rem 0;
+    background-color: var(--background-color);
+}
+
+.album img{
+    width: 180px;
+}
+
+.preview-actions-wrapper{
+    display: flex;
+}
+
+.preview-actions-wrapper img {
+    margin-right: 0.5rem;
+}
+
+.actions{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.actions *:first-child{
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.actions *{
+    height: 100%;
+}
+
+.edit-btn{
+    background-color: #151719;
+    border: none;
+}
+
+.edit-btn:hover{
+    background-color: white;
+    color: #0C0D0E;
+}
+
+.delete-btn{
+    background-color: #151719;
+    border: none;
+}
+
+.delete-btn:hover{
+    background-color: #AE392D;
+    color: white;
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+  }
+
+.confirmation-dialog{
+    background-color: var(--background-color);
+}

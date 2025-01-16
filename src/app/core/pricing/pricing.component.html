@@ -1,0 +1,6 @@
+<div class="heading">
+    <h1 #title>Árlista</h1>
+</div>
+<div class="container">
+    <app-price-card [pricing]="price"  *ngFor="let price of prices" #priceCard></app-price-card>
+</div>

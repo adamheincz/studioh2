@@ -1,0 +1,10 @@
+<div class="carousel-wrapper" #carouselTrigger>
+    <ngx-slick-carousel #slickModal="slick-carousel" [config]="slideConfig" #slickCarousel (beforeChange)="beforeChange($event)">
+            <div class="photo-card" ngxSlickItem *ngFor="let photo of album.photos, index as i">
+                <!-- <div class="image-wrapper"> -->
+                    <img [src]="photo.imagePath" fill [alt]="photo.title" #photo (load)="fixCentering(i)" (loading)="-2 < i && i < 2 ? 'eager' : 'lazy'">
+                <!-- </div> -->
+                <h3 class="photo-title" #photoTitle>{{ photo.title }}</h3>
+            </div>
+    </ngx-slick-carousel>
+</div>

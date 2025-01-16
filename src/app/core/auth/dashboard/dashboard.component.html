@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Manage albums</h1>
+    <div class="control-panel">
+        <button [disabled]="!isOrderChanged" (click)="onSaveOrder()">Save order</button>
+        <a routerLink="/create-album">
+            <button>Create new album +</button>
+        </a>
+    </div>
+    <div cdkDropList  (cdkDropListDropped)="drop($event)">
+        <div cdkDrag class="album" *ngFor="let album of albums">
+            <h2>{{ album.title }}</h2>
+            <div class="preview-actions-wrapper">
+                <img [src]="album.photos.at(0).imagePath" [alt]="album.photos.at(0).title">
+                <div class="actions">
+                    <a [routerLink]="['/edit-album', album.id]">
+                        <button class="edit-btn">Edit album</button>
+                    </a>
+                    <button class="delete-btn" (click)="openConfirmationDialog(album.title, album.id)">Delete album</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

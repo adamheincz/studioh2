@@ -1,0 +1,31 @@
+<div class="gallery">
+    <div class="heading">
+        <h1 #title>Galéria</h1>
+    </div>
+    <div class="title-section">
+        <div class="dropdown">
+            <div class="dropdown-button" (click)="toggleDropDown()">
+                <div class="title-wrapper">
+                    <div class="sliding-titles" #slidingTitle>
+                        <h1 *ngFor="let album of albums">
+                            {{ album.title }}
+                        </h1>
+                    </div>
+                </div>
+                <mat-icon class="arrow" #dropdownArrow>
+                    arrow_drop_down
+                </mat-icon>
+            </div>
+            <div class="dropdown-options" #options>
+                <ul>
+                    <li *ngFor="let album of albums, index as i">
+                        <a (click)="scrollToSection(i)">{{ album.title }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper" *ngFor="let album of albums, index as i" #carousel>
+        <app-album-carousel [album]="album"></app-album-carousel>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div>
+    <a routerLink="/"><h1 class="logo">STUDIO H2</h1></a>
+</div>
+<nav>
+    <a (click)="onOpenMenu()"><mat-icon class="menu-icon">menu</mat-icon></a>
+    <div class="menu-container">
+        <a (click)="onClick()"><mat-icon class="close-icon">close</mat-icon></a>
+        <ul class="menu">
+            <li><a data-hover="Rólunk" routerLink="" fragment="about-us" (click)="onClick()">Rólunk</a></li>
+            <li><a data-hover="Galéria" routerLink="" fragment="gallery" (click)="onClick()">Galéria</a></li>
+            <li><a data-hover="Árlista" routerLink="" fragment="pricing" (click)="onClick()">Árlista</a></li>
+            <li><a data-hover="Elérhetőség" routerLink="" fragment="contact" (click)="onClick()">Elérhetőség</a></li>
+            <li *ngIf="userIsAuthenticated"><a data-hover="Irányítópult" routerLink="/dashboard" (click)="onClick()">Irányítópult</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="login">
+    <a routerLink="/login" *ngIf="!userIsAuthenticated"><button>Bejelentkezés</button></a>
+    <button *ngIf="userIsAuthenticated" (click)="onLogout()">Kijelentkezés</button>
+</div>

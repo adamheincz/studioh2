@@ -1,0 +1,144 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  height: var(--header-height);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: var(--background-color);
+  scrollbar-gutter: stable both-edges;
+}
+
+.logo {
+  font-size: 1rem;
+  z-index: 100;
+  position: relative;
+  font-weight: 600;
+}
+
+.menu-container {
+  clip-path: none;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin-right: 4rem;
+  transition: 0.3s;
+}
+
+.menu li:hover{
+  transform: translateY(-100%);
+} 
+
+.menu li:last-of-type {
+  margin-right: 0;
+}
+
+.menu li a {
+  position: relative;
+}
+
+.menu li a::after {
+  content: attr(data-hover);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.login {
+  text-align: center;
+}
+
+.menu-icon,
+.menu-logo,
+.close-icon {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .menu-container {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  .menu-icon,
+  .close-icon,
+  .menu-logo {
+    display: block;
+  }
+
+  .menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #020202d2;
+    font-size: 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transform: translateY(-100%);
+    border-bottom: 1px solid white;
+  }
+
+  .menu-container::before {
+    content: "";
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    align-items: center;
+  }
+
+  .menu li {
+    margin-right: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .close-icon {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+
+  .menu-logo {
+    position: absolute;
+    top: 20%;
+    right: 50%;
+    text-align: center;
+    transform: translate(50%, 0)
+  }
+
+  .menu li a::after {
+    content: "";
+  }
+
+  .menu li:hover {
+    transform: none;
+  }
+}

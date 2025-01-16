@@ -1,0 +1,40 @@
+<div class="card" [ngClass]="pricing.packages[selectedIndex].title.toLowerCase()">
+    <img [src]="pricing.imageUrl" [alt]="pricing.title">
+    <h2 class="title">
+        {{ pricing.title }}
+    </h2>
+    <div class="package-selector">
+        <form>
+            <ng-container *ngFor="let package of pricing.packages; index as i">
+                <label>
+                    <input 
+                    type="radio" 
+                    name="radio" 
+                    [id]="package.title" 
+                    [value]="i" 
+                    [(ngModel)]="selectedIndex"
+                    (ngModelChange)="onChange($event)">
+                    <span>{{ package.title }}</span>
+                </label>
+            </ng-container>
+        </form>
+    </div>
+    <div class="content" #content>
+        <div class="price" #price>
+            {{ pricing.packages[selectedIndex].price | currency:'HUF':'symbol':'1.0-0'}}
+        </div>
+            <p class="description">
+                {{ pricing.description }}
+            </p>
+            <div class="details" #details>
+                <h3>A 
+                    <span class="package-name" [ngClass]="pricing.packages[selectedIndex].title.toLowerCase()">
+                        {{pricing.packages[selectedIndex].title}}
+                    </span> csomag tartalma:
+                </h3>
+                <ul>
+                    <li *ngFor="let detail of pricing.packages[selectedIndex].details">{{ detail }}</li>
+                </ul>
+            </div>
+    </div>
+</div>

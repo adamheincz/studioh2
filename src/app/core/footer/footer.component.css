@@ -1,0 +1,37 @@
+:host{
+    display: flex;
+    justify-content: space-between;
+    height: var(--footer-height);
+    align-items: center;
+    padding: 1rem;
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+    z-index: 2;
+    background-color: var(--background-color);
+    /* background: linear-gradient(transparent, #0c0d0e 20%); */
+}
+
+/* :host:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    -webkit-mask: linear-gradient(transparent, black);
+    mask: linear-gradient(transparent, black);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  } */
+
+  .coordinates {
+    text-align: right;
+  }
+
+  @media screen and (max-width: 800px) {
+    :host {
+        font-size: 0.8rem;
+    }
+  }

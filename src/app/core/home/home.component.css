@@ -1,0 +1,27 @@
+:host{
+    /* display: grid;
+    grid-template-columns: 1fr 6fr 1fr; */
+    /* display: flex;
+    align-items: center; */
+    display: block;
+    /* margin-left: 16px;
+    margin-right: 16px; */
+}
+
+app-album-carousel{
+    margin-top: var(--header-height);
+    --carousel-window-width: 65vw;
+    opacity: 1;
+}
+
+.heading {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid white;;
+}
+
+.heading h1{
+    font-size: 8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0 1rem;
+}
