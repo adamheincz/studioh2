@@ -7,11 +7,11 @@ import { Subject } from 'rxjs';
 export class DialogService {
   dialogOpened = new Subject<boolean>();
   dialogNotifier = new Subject();
-  data: {name?: string, type?: string};
+  data: {dialogType: string, name?: string, type?: string, src?: string};
 
   constructor() { }
 
-  open(options?: {name: string, type: string}) {
+  open(options?: {dialogType: string, name?: string, type?: string, src?:string}) {
     this.data = options;
     this.dialogOpened.next(true);
     return this.dialogNotifier?.asObservable();

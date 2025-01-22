@@ -32,7 +32,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
-import localeHu from '@angular/common/locales/hu'
+import localeHu from '@angular/common/locales/hu';
 
 registerLocaleData(localeHu);
 
@@ -52,7 +52,7 @@ registerLocaleData(localeHu);
     HeroComponent,
     GalleryComponent,
     PricingComponent,
-    PriceCardComponent,
+    PriceCardComponent
   ],
   imports: [
     BrowserModule,

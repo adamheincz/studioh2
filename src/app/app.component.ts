@@ -48,6 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
     this.dialogSub = this.dialogService.getDialogOpenedListener()
       .subscribe((dialogOpened: boolean) => {
+        console.log("dialog opened");
         this.dialogOpened = dialogOpened;
       });
     this.router.events.pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd)).subscribe((event) => {

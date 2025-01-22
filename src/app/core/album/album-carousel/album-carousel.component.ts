@@ -24,7 +24,7 @@ export class AlbumCarouselComponent implements AfterViewInit, OnInit{
   constructor() { }
 
   slideConfig = {
-    "slidesToShow": 3,
+    "slidesToShow": 1,
     "slidesToScroll": 1,
     "variableWidth": true,
     "variableHeight": true,

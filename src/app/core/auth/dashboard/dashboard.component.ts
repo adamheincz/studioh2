@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit, OnDestroy{
 
   albums: Album[] = [];
   private albumsSub: Subscription;
+  private dialogSub: Subscription;
   isOrderChanged = false;
 
   constructor(public albumsService: AlbumsService, public dialogService: DialogService){}
@@ -30,7 +31,8 @@ export class DashboardComponent implements OnInit, OnDestroy{
   }
 
   openConfirmationDialog(name: string, id: string) {
-    let dialogRef = this.dialogService.open({
+    this.dialogSub = this.dialogService.open({
+      dialogType: 'confirmation',
       name: name,
       type: 'album',
     }).subscribe((confirmed) => {
@@ -66,5 +68,8 @@ export class DashboardComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
     this.albumsSub.unsubscribe();
+    if(this.dialogSub) {
+      this.dialogSub.unsubscribe();
+    }
   }
 }
