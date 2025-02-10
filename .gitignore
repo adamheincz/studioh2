@@ -43,3 +43,6 @@ dist/*
 # System files
 .DS_Store
 Thumbs.db
+
+#exception
+!somefolder/text.txt
