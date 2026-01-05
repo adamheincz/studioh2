@@ -26,8 +26,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "60 perc fotózás",
             "30 db szerkesztett kép",
-            "5 db retusált kép",
-            "3 szett ruha"
+            "5 db retusált kép"
           ]
         },
         {
@@ -36,8 +35,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "2 óra fotózás",
             "60 db szerkesztett kép",
-            "12 db retusált kép",
-            "8 szett ruha"
+            "12 db retusált kép"
           ]
         },
         {
@@ -46,8 +44,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "3 óra fotózás",
             "90 db szerkesztett kép",
-            "20 db retusált kép",
-            "korlátlan szett ruha"
+            "20 db retusált kép"
           ]
         }
       ],
@@ -63,8 +60,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "60 perc fotózás",
             "30 db szerkesztett kép",
-            "5 db retusált kép",
-            "3 szett ruha"
+            "5 db retusált kép"
           ]
         },
         {
@@ -73,8 +69,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "2 óra fotózás",
             "60 db szerkesztett kép",
-            "12 db retusált kép",
-            "8 szett ruha"
+            "12 db retusált kép"
           ]
         },
         {
@@ -83,8 +78,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "3 óra fotózás",
             "90 db szerkesztett kép",
-            "20 db retusált kép",
-            "korlátlan szett ruha"
+            "20 db retusált kép"
           ]
         }
       ],
@@ -99,7 +93,7 @@ export class PricingComponent implements AfterViewInit {
           "price": 49000,
           "details": [
             "60 perc fotózás",
-            "30 db szerkesztett kép",
+            "40 db szerkesztett kép",
             "3 db retusált kép",
           ]
         },
@@ -108,7 +102,7 @@ export class PricingComponent implements AfterViewInit {
           "price": 69000,
           "details": [
             "2 óra fotózás",
-            "60 db szerkesztett kép",
+            "80 db szerkesztett kép",
             "8 db retusált kép",
           ]
         },
@@ -117,7 +111,7 @@ export class PricingComponent implements AfterViewInit {
           "price": 89000,
           "details": [
             "3 óra fotózás",
-            "90 db szerkesztett kép",
+            "120 db szerkesztett kép",
             "12 db retusált kép",
           ]
         }
@@ -170,7 +164,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "30 perc fotózás stúdióban vagy kültéren",
             "3 db retusált",
-            "10 db szerkesztett kép",
+            "15 db szerkesztett kép",
           ]
         },
         {
@@ -179,7 +173,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "1 óra fotózás stúdióban és/ vagy kültéren akár tevékenység közben",
             "6 db retusált kép",
-            "20 db szerkesztett kép",
+            "30 db szerkesztett kép",
           ]
         },
         {
@@ -188,7 +182,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "2 óra fotózás stúdióban és/ vagy kültéren akár tevékenység közben",
             "9 db retusált kép",
-            "30 db szerkesztett kép",
+            "60 db szerkesztett kép",
           ]
         }
       ],
@@ -204,7 +198,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "30 perc fotózás beltérben vagy kültéren",
             "3 db retusált kép",
-            "10 db szerkesztett kép",
+            "15 db szerkesztett kép",
           ]
         },
         {
@@ -213,7 +207,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "1 óra fotózás beltérben vagy kültéren",
             "6 db retusált kép",
-            "20 db szerkesztett kép"
+            "30 db szerkesztett kép"
           ]
         },
         {
@@ -222,7 +216,7 @@ export class PricingComponent implements AfterViewInit {
           "details": [
             "1.5-2 óra fotózás beltérben és/ vagy kültéren",
             "9 db retusált kép",
-            "30 db szerkesztett kép"
+            "60 db szerkesztett kép"
           ]
         }
       ],

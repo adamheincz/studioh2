@@ -1,0 +1,8 @@
+<div *ngIf="storedCookieConsent == null && !hide" class="banner">
+    <h3>Az oldalunk cookie-kat használhat.</h3>
+    <p>Kérjük jelezze, hogy elfogadja-e a cookie-k használatát.</p>
+    <div class="buttons">
+        <button (click)="onClick('denied')" class="decline-button">Elutasítás</button>
+        <button (click)="onClick('granted')" class="accept-button">Elfogadás</button>
+    </div>
+</div>

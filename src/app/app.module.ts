@@ -33,6 +33,7 @@ import { CommonModule } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeHu from '@angular/common/locales/hu';
+import { CookieBannerComponent } from './features/cookie-banner/cookie-banner.component';
 
 registerLocaleData(localeHu);
 
@@ -52,7 +53,8 @@ registerLocaleData(localeHu);
     HeroComponent,
     GalleryComponent,
     PricingComponent,
-    PriceCardComponent
+    PriceCardComponent,
+    CookieBannerComponent
   ],
   imports: [
     BrowserModule,
