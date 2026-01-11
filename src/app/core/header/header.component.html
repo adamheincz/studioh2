@@ -6,10 +6,10 @@
     <div class="menu-container">
         <a (click)="onClick()"><mat-icon class="close-icon">close</mat-icon></a>
         <ul class="menu">
-            <li><a data-hover="Rólunk" routerLink="" fragment="about-us" (click)="onClick()">Rólunk</a></li>
-            <li><a data-hover="Galéria" routerLink="" fragment="gallery" (click)="onClick()">Galéria</a></li>
-            <li><a data-hover="Árlista" routerLink="" fragment="pricing" (click)="onClick()">Árlista</a></li>
-            <li><a data-hover="Elérhetőség" routerLink="" fragment="contact" (click)="onClick()">Elérhetőség</a></li>
+            <li><a data-hover="Rólunk" routerLink="/rolunk">Rólunk</a></li>
+            <li><a data-hover="Galéria" routerLink="/galeria" (click)="onClick()">Galéria</a></li>
+            <li><a data-hover="Árlista" routerLink="/arlista" (click)="onClick()">Árlista</a></li>
+            <li><a data-hover="Elérhetőség" routerLink="/elerhetoseg" (click)="onClick()">Elérhetőség</a></li>
             <li *ngIf="userIsAuthenticated"><a data-hover="Irányítópult" routerLink="/dashboard" (click)="onClick()">Irányítópult</a></li>
         </ul>
     </div>

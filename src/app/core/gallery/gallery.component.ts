@@ -3,6 +3,7 @@ import { Album } from '../album/album.model';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isPlatformBrowser } from '@angular/common';
+import { RoutescrollerService } from 'src/app/routescroller.service';
 
 @Component({
   selector: 'app-gallery',
@@ -22,15 +23,18 @@ export class GalleryComponent {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
+    private routeScrollerService: RoutescrollerService,
     private elRef: ElementRef) { }
 
   ngAfterViewInit(): void {
     this.dropdownTimeline.pause();
     if (isPlatformBrowser(this.platformId)) {
-      console.log("browser")
       this.initAnimations();
       this.initScrollAnimations();
       ScrollTrigger.refresh();
+
+      this.routeScrollerService.jumpToSection();
+      this.routeScrollerService.initRouteScroller();
     }
   }
 
@@ -54,18 +58,10 @@ export class GalleryComponent {
           trigger: carousel.nativeElement,
           start: "top center",
           end: "center-=20% center",
-          scrub: true,
-          // markers: true
+          scrub: true
         }
       })
 
-      tl.to(carousel.nativeElement, { opacity: 1, scale: 1, })
-        .to(this.slidingTitleRef.nativeElement, { y: -19 * (index) }, 0)
-
-    }
-
-    for (let index = 0; index < this.carousels.toArray().length; index++) {
-      let carousel = this.carousels.toArray()[index]
       const tl2 = gsap.timeline({
         scrollTrigger: {
           trigger: carousel.nativeElement,
@@ -75,7 +71,13 @@ export class GalleryComponent {
         }
       })
 
-      tl2.to(carousel.nativeElement, { opacity: 0.1 })
+      console.log(carousel.nativeElement)
+
+      tl.to(carousel.nativeElement, { opacity: 1, scale: 1, })
+        .to(this.slidingTitleRef.nativeElement, { y: -19.5 * (index) }, 0);
+
+      tl2.to(carousel.nativeElement, { opacity: 0.1 });
+
     }
   }
 

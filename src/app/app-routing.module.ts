@@ -5,10 +5,22 @@ import { LoginComponent } from './core/auth/login/login.component';
 import { DashboardComponent } from './core/auth/dashboard/dashboard.component';
 import { AlbumCreateComponent } from './core/album/album-create/album-create.component';
 import { AuthGuard } from './core/auth/auth.guard';
+import { PrefaceComponent } from './core/preface/preface.component';
+import { GalleryComponent } from './core/gallery/gallery.component';
+import { PricingComponent } from './core/pricing/pricing.component';
+import { ContactComponent } from './core/contact/contact.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { 
+    path: '',
+    component: HomeComponent,
+    children: [
+      { path: 'rolunk', component: PrefaceComponent },
+      { path: 'galeria', component: GalleryComponent },
+      { path: 'arlista', component: PricingComponent},
+      { path: 'elerhetoseg', component: ContactComponent}
+    ]   
+  },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'create-album', component: AlbumCreateComponent, canActivate: [AuthGuard] },

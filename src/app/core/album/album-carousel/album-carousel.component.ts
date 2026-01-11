@@ -3,6 +3,7 @@ import { Photo } from '../../album/photo.model';
 import { Album } from '../../album/album.model';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { gsap } from 'gsap';
+import { RoutescrollerService } from 'src/app/routescroller.service';
 
 @Component({
   selector: 'app-album-carousel',
@@ -41,13 +42,6 @@ export class AlbumCarouselComponent implements AfterViewInit, OnInit{
   ngAfterViewInit(): void {
     //this.animatePhotos();
     //this.animateTitles();
-  }
-
-  isLazyLoaded(index: number){
-    if(index > 1 || index < -1) {
-      return "lazy";
-    }
-    return "eager";
   }
 
   beforeChange(e: any) {

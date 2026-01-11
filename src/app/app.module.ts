@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
@@ -54,7 +54,7 @@ registerLocaleData(localeHu);
     GalleryComponent,
     PricingComponent,
     PriceCardComponent,
-    CookieBannerComponent
+    CookieBannerComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +71,7 @@ registerLocaleData(localeHu);
     FormsModule,
     CommonModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
