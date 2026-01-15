@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { gsap } from 'gsap';
 import { isPlatformBrowser, ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
+import { RoutescrollerService } from 'src/app/routescroller.service';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     public authService: AuthService,
-    private viewportScroller: ViewportScroller,
+    private routeScrollerService: RoutescrollerService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -56,7 +57,12 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     this.timeline.play();
   }
 
-  onClick() {
+  onNav(section?: string) {
+    this.routeScrollerService.jumpToSection(section);
+    this.closeDropdown();
+  }
+
+  closeDropdown() {
     this.timeline.reverse();
   }
 

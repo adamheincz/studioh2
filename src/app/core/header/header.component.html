@@ -4,13 +4,13 @@
 <nav>
     <a (click)="onOpenMenu()"><mat-icon class="menu-icon">menu</mat-icon></a>
     <div class="menu-container">
-        <a (click)="onClick()"><mat-icon class="close-icon">close</mat-icon></a>
+        <a (click)="closeDropdown()"><mat-icon class="close-icon">close</mat-icon></a>
         <ul class="menu">
-            <li><a data-hover="Rólunk" routerLink="/rolunk">Rólunk</a></li>
-            <li><a data-hover="Galéria" routerLink="/galeria" (click)="onClick()">Galéria</a></li>
-            <li><a data-hover="Árlista" routerLink="/arlista" (click)="onClick()">Árlista</a></li>
-            <li><a data-hover="Elérhetőség" routerLink="/elerhetoseg" (click)="onClick()">Elérhetőség</a></li>
-            <li *ngIf="userIsAuthenticated"><a data-hover="Irányítópult" routerLink="/dashboard" (click)="onClick()">Irányítópult</a></li>
+            <li><a data-hover="Rólunk" routerLink="/rolunk" (click)="onNav('rolunk')">Rólunk</a></li>
+            <li><a data-hover="Galéria" routerLink="/galeria" (click)="onNav('galeria')">Galéria</a></li>
+            <li><a data-hover="Árlista" routerLink="/arlista" (click)="onNav('arlista')">Árlista</a></li>
+            <li><a data-hover="Elérhetőség" routerLink="/elerhetoseg" (click)="onNav('elerhetoseg')">Elérhetőség</a></li>
+            <li *ngIf="userIsAuthenticated"><a data-hover="Irányítópult" routerLink="/dashboard" (click)="onNav()">Irányítópult</a></li>
         </ul>
     </div>
 </nav>

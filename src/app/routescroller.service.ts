@@ -11,14 +11,13 @@ export class RoutescrollerService {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private router: Router) { }
 
-  initRouteScroller() {
-    this.router.events.pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd)).subscribe((event) => {
-      this.jumpToSection();
-    })
-  }
+  // initRouteScroller() {
+  //   this.router.events.pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd)).subscribe((event) => {
+  //     this.jumpToSection();
+  //   })
+  // }
 
-  jumpToSection() {
-    let section = this.router.url.slice(1);
+  jumpToSection(section = this.router.url.slice(1)) {
     if (isPlatformBrowser(this.platformId)) {
       if (section) {
         if (section == "elerhetoseg") {

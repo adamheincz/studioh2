@@ -107,7 +107,7 @@ export class AlbumsService {
         }
 
         for(const imagePath of imagesToBeDeleted) {
-            albumData.append("imagesToBeDeleted", imagePath);
+            albumData.append("imagesToBeDeleted[]", imagePath);
         }
 
         this.http.put<{ message: string, album: Album }>(BACKEND_URL + album.id, albumData)

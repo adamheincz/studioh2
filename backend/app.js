@@ -10,12 +10,12 @@ const userRoutes = require('./routes/users');
 
 const app = express();
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@studio.osedjs1.mongodb.net/studioh2?retryWrites=true&w=majority&appName=studio`)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("Connected to database!");
     })
     .catch(() => {
-        console.log("Connection failed!");
+        console.log("Connection to database failed!");
     });
 
 app.use(bodyParser.json());

@@ -2,7 +2,12 @@
   "name": "studioh2",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development node server.js",
+    "start": "NODE_ENV=production node server.js"
+  },
   "dependencies": {
+    "@google-cloud/storage": "^7.18.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",

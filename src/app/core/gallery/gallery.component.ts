@@ -34,7 +34,7 @@ export class GalleryComponent {
       ScrollTrigger.refresh();
 
       this.routeScrollerService.jumpToSection();
-      this.routeScrollerService.initRouteScroller();
+      //this.routeScrollerService.initRouteScroller();
     }
   }
 

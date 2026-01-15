@@ -65,6 +65,7 @@ app-album-carousel {
     margin: 0 1rem;
     margin-top: 2rem;
     height: fit-content;
+    opacity: 0.1;
     /* transform: scale(0.95); */
     /* height: calc(80vh - var(--header-height) - var(--footer-height) + 2rem); */
     /* height: calc(80vh - var(--header-height) - var(--footer-height)); */

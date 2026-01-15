@@ -37,8 +37,9 @@ yarn-error.log
 testem.log
 /typings
 /backend/images/*
-.env
+.env*
 dist/*
+studioh2-storage-76edf90e8431.json
 
 # System files
 .DS_Store
