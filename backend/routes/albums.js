@@ -112,7 +112,7 @@ router.put(
      for (const [index, photo] of photos.entries()) {
        console.log(photo.imagePath);
        if (photo.imagePath == "") {
-         photo.imagePath = images[index].cloudStoragePublicUrl;
+         photo.imagePath = images[counter].cloudStoragePublicUrl;
          counter++;
        }
      }
