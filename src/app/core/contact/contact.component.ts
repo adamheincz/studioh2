@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
+import { ConsentService } from 'src/app/features/consent.service';
 
 @Component({
   selector: 'app-contact',
@@ -16,7 +17,7 @@ export class ContactComponent implements AfterViewInit {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private elRef: ElementRef) { }
+    private elRef: ElementRef, public consent: ConsentService) { }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {

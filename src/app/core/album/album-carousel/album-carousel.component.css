@@ -72,47 +72,17 @@ ngx-slick-carousel {
   opacity: 1;
 }
 
-/* changes */
-
-/* .slick-slide {
-  position: relative;
-  max-width: calc(var(--carousel-window-width) * 0.8);
-  min-width: auto;
-  height: calc(80vh - var(--header-height) - var(--footer-height));
-  margin: 0 10px;
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-} */
 
 .slick-slide {
   margin: auto 10px;
 }
 
-/* .slick-slide img {
-  position: static !important;
-  height: auto !important;
-  width: auto !important;
-  display: block;
-  max-height: calc(100% - 1rem - 0.5rem);
-  max-width: 100%;
-  object-fit: contain;
-  opacity: 0.5;
-  transition: 0.5s;
-} */
 
 .slick-slide {
   display: flex !important;
   flex-direction: column;
   justify-content: center;
 }
-
-/* .slick-slide img {
-  max-width: var(--carousel-window-width);
-  opacity: 0.5;
-  transition: 0.5s;
-  object-fit: contain;
-} */
 
 .image-element {
   max-width: var(--carousel-window-width);

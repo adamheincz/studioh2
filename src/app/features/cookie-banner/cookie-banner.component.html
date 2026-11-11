@@ -1,4 +1,4 @@
-<div *ngIf="storedCookieConsent == null && !hide" class="banner">
+<div *ngIf="storedCookieConsent == null || consent.bannerOpen" class="cookie-banner">
     <h3>Az oldalunk cookie-kat használhat.</h3>
     <p> Látogatottsági statisztikát készítünk a Google Analytics segítségével, hogy lássuk, mely oldalaink érdeklik leginkább a látogatókat. Ehhez kérjük hozzájárulását. Részletek az <app-document-link [url]="'../../assets/Adatkezelesi_tajekoztato_Sonnendent.pdf'" [name]="'Adatkezelési tájékoztatóban'" />.</p>
     <div class="buttons">
