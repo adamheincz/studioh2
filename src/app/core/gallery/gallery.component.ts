@@ -74,7 +74,7 @@ export class GalleryComponent {
       console.log(carousel.nativeElement)
 
       tl.to(carousel.nativeElement, { opacity: 1, scale: 1, })
-        .to(this.slidingTitleRef.nativeElement, { y: -19.5 * (index) }, 0);
+        .to(this.slidingTitleRef.nativeElement, { y: -20 * (index) }, 0);
 
       tl2.to(carousel.nativeElement, { opacity: 0.1 });
 

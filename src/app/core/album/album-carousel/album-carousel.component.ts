@@ -11,16 +11,16 @@ import { RoutescrollerService } from 'src/app/routescroller.service';
   styleUrls: ['./album-carousel.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class AlbumCarouselComponent implements AfterViewInit, OnInit{
+export class AlbumCarouselComponent implements AfterViewInit{
   photos: Photo[] = [];
   @Input({required: true}) album: Album;
   selectedPhotoIndex = 0;
-  counter = 0;
+  imagesLoadedArray: boolean[] = [];
 
   @ViewChild('carouselTrigger', { static: true }) carouselTrigger: ElementRef<HTMLDivElement>;
   @ViewChild('slickCarousel',  { static: true }) slickCarousel: SlickCarouselComponent;
-  @ViewChildren('photo') photoRefs: QueryList<ElementRef>;
   @ViewChildren('photoTitle') photoTitles: QueryList<ElementRef>;
+  @ViewChildren('skeletonImage') skeletonImages: QueryList<ElementRef>;
 
   constructor() { }
 
@@ -35,13 +35,8 @@ export class AlbumCarouselComponent implements AfterViewInit, OnInit{
     "lazyLoading": true
   }
 
-  ngOnInit(): void {
-
-  }
-
   ngAfterViewInit(): void {
-    //this.animatePhotos();
-    //this.animateTitles();
+    this.imagesLoadedArray = new Array(this.album.photos.length).fill(false);
   }
 
   beforeChange(e: any) {
@@ -52,12 +47,12 @@ export class AlbumCarouselComponent implements AfterViewInit, OnInit{
     console.log(e);
   }
 
-  fixCentering(index: number) {
+  onLoad(index: number) {
     // ScrollTrigger.refresh();
+    this.imagesLoadedArray[index] = true;
     if(index == 0) {
       this.slickCarousel.slickGoTo(0);
     }
-    this.counter++;
   }
 
 }

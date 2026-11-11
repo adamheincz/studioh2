@@ -3,12 +3,15 @@
     flex-direction: column;
     gap: 1.5rem;
     position: fixed;
-    bottom: 5rem;
-    right: 1rem;
+    bottom: 0;
+    right: 0;
     padding: 3rem;
     background-color: black;
     border: 1px solid white;
     z-index: 10;
+    margin: 1rem;
+    margin-bottom: 5rem;
+    max-width: 600px;
 }
 
 .buttons {

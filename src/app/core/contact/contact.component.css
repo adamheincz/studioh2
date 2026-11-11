@@ -16,7 +16,7 @@
 
 .container {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .description {
@@ -54,13 +54,13 @@ table {
 }
 
 .contacts tr {
-    border-top: 1px solid var(--background-color);
+    border-top: 2px solid var(--background-color);
 }
 
 .contacts th,
 .contacts td {
     text-align: left;
-    padding: 0.25rem;
+    padding: 0.75rem;
 }
 
 .contacts th {
@@ -74,11 +74,6 @@ table {
 .info {
     display: flex;
     gap: 1rem;
-}
-
-.info > h3 {
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 @media screen and (max-width: 1050px) {
@@ -101,6 +96,10 @@ table {
 
 @media screen and (max-width: 700px) {
     table {
+        font-size: 1rem;
+    }
+
+    .info a {
         font-size: 1rem;
     }
 

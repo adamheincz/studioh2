@@ -1,6 +1,6 @@
 <div *ngIf="storedCookieConsent == null && !hide" class="banner">
     <h3>Az oldalunk cookie-kat használhat.</h3>
-    <p>Kérjük jelezze, hogy elfogadja-e a cookie-k használatát.</p>
+    <p> Látogatottsági statisztikát készítünk a Google Analytics segítségével, hogy lássuk, mely oldalaink érdeklik leginkább a látogatókat. Ehhez kérjük hozzájárulását. Részletek az <app-document-link [url]="'../../assets/Adatkezelesi_tajekoztato_Sonnendent.pdf'" [name]="'Adatkezelési tájékoztatóban'" />.</p>
     <div class="buttons">
         <button (click)="onClick('denied')" class="decline-button">Elutasítás</button>
         <button (click)="onClick('granted')" class="accept-button">Elfogadás</button>

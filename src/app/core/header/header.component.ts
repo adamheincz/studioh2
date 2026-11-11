@@ -86,6 +86,10 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  jumpToTop() {
+    gsap.to(window, { duration: 1, scrollTo: { y: 0, offsetY: 64 } });
+  }
+
   ngOnDestroy(): void {
     this.authListenerSubs.unsubscribe();
   }

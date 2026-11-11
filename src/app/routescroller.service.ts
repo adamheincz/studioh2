@@ -21,8 +21,13 @@ export class RoutescrollerService {
 
   jumpToSection(section = this.router.parseUrl(this.router.url).root.children['primary']?.segments[0]?.path) {
 
+    section = section.split('/')[0];
+
     if (isPlatformBrowser(this.platformId)) {
       if (section && this.sections.includes(section)) {
+
+        console.log("section:", section);
+
         if (section == "elerhetoseg") {
           gsap.to(window, { duration: 1, ease: "power2.out", scrollTo: { y: "max" } });
         } else {

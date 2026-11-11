@@ -1,26 +1,22 @@
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
-import { Subscription } from 'rxjs';
-import { DialogService } from 'src/app/features/dialog.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements AfterViewInit, OnDestroy {
+export class ContactComponent implements AfterViewInit {
 
   @ViewChild('description', { static: false }) description: ElementRef;
   @ViewChild('imageFirst', { static: false }) imageFirst: ElementRef;
   @ViewChild('imageSecond', { static: false }) imageSecond: ElementRef;
 
-  private dialogSub: Subscription;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private elRef: ElementRef,
-    private dialogService: DialogService) { }
+    private elRef: ElementRef) { }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -55,20 +51,5 @@ export class ContactComponent implements AfterViewInit, OnDestroy {
     // .to(this.imageSecond.nativeElement, {opacity: 1, translateY: "none", duration: 0.5}, 0.25)
     // .to(this.imageFirst.nativeElement, {opacity: 1, translateY: "none", duration: 0.25}, ">-0.25")
 
-  }
-
-  openInformationDialog(src: string) {
-    this.dialogSub = this.dialogService.open({
-      dialogType: 'information',
-      src: src,
-    }).subscribe(() => {
-      console.log("information");
-    })
-  }
-
-  ngOnDestroy(): void {
-    if(this.dialogSub) {
-      this.dialogSub.unsubscribe();
-    }
   }
 }

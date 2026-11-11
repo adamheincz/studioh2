@@ -5,15 +5,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
   font-family: "Inter", sans-serif;
   color: white;
-  text-decoration: none;
+}
+
+a {
+  color: inherit;
 }
 
 :root {
   --header-height: 64px;
   --footer-height: 64px;
   --carousel-window-width: 75vw;
+  --carousel-mobile-window-width: calc(100vw - 32px);
   --mobile-title-height: 37px;
   --mobile-next-height: 48px;
   --background-color: #020202;
@@ -32,6 +40,7 @@ h1 {
 button {
   background: none;
   border: white 2px solid;
+  color: white;
   padding: 0.5em 1.2em;
   transition: .2s;
   font-weight: 500;

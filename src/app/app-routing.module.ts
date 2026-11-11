@@ -15,16 +15,16 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      { path: 'rolunk', component: PrefaceComponent },
-      { path: 'galeria', component: GalleryComponent },
-      { path: 'arlista', component: PricingComponent},
-      { path: 'elerhetoseg', component: ContactComponent}
+      { path: 'rolunk/.', component: PrefaceComponent, title: 'Rólunk' },
+      { path: 'galeria/.', component: GalleryComponent, title: 'Galéria' },
+      { path: 'arlista/.', component: PricingComponent, title: 'Árlista'},
+      { path: 'elerhetoseg/.', component: ContactComponent, title: 'Elérhetőség'}
     ]   
   },
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'create-album', component: AlbumCreateComponent, canActivate: [AuthGuard] },
-  { path: 'edit-album/:albumId', component: AlbumCreateComponent, canActivate: [AuthGuard] }
+  { path: 'login/.', component: LoginComponent , title: 'Bejelentkezés'},
+  { path: 'dashboard/.', component: DashboardComponent, canActivate: [AuthGuard], title: 'Vezérlőpult' },
+  { path: 'create-album/.', component: AlbumCreateComponent, canActivate: [AuthGuard], title: 'Új album' },
+  { path: 'edit-album/:albumId/.', component: AlbumCreateComponent, canActivate: [AuthGuard], title: 'Album szerkesztése' }
 ];
 
 @NgModule({

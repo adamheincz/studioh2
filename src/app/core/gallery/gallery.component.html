@@ -7,9 +7,9 @@
             <div class="dropdown-button" (click)="toggleDropDown()">
                 <div class="title-wrapper">
                     <div class="sliding-titles" #slidingTitle>
-                        <h1 *ngFor="let album of albums">
+                        <h2 *ngFor="let album of albums">
                             {{ album.title }}
-                        </h1>
+                        </h2>
                     </div>
                 </div>
                 <mat-icon class="arrow" #dropdownArrow>

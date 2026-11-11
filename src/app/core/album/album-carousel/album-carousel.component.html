@@ -1,10 +1,14 @@
 <div class="carousel-wrapper" #carouselTrigger>
-    <ngx-slick-carousel #slickModal="slick-carousel" [config]="slideConfig" #slickCarousel (beforeChange)="beforeChange($event)">
-            <div class="photo-card" ngxSlickItem *ngFor="let photo of album.photos, index as i">
-                <!-- <div class="image-wrapper"> -->
-                    <img [src]="photo.imagePath" fill [alt]="photo.title" #photo (load)="fixCentering(i)">
-                <!-- </div> -->
-                <h3 class="photo-title" #photoTitle>{{ photo.title }}</h3>
+    <ngx-slick-carousel #slickModal="slick-carousel" [config]="slideConfig" #slickCarousel
+        (beforeChange)="beforeChange($event)">
+        <div class="photo-card" ngxSlickItem *ngFor="let photo of album.photos, index as i">
+            <!-- <div class="image-wrapper"> -->
+            <div>
+                <div class="image-element skeleton-image" *ngIf="imagesLoadedArray[i] === false"></div>
+                <img class="image-element" [src]="photo.imagePath" fill [alt]="photo.title" (load)="onLoad(i)">
             </div>
+            <!-- </div> -->
+            <h3 class="photo-title" #photoTitle>{{ photo.title }}</h3>
+        </div>
     </ngx-slick-carousel>
 </div>
